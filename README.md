@@ -112,6 +112,8 @@ Após a execução, a aplicação estará disponível em [http://localhost:3000]
 
 ---
 
+<img width="1917" height="865" alt="image" src="https://github.com/user-attachments/assets/2a7714c9-7d7b-41f4-9144-99b3ae2db694" />
+
 ## 🤝 Contribuições
 
 Contribuições são muito bem-vindas! Se você tem ideias para melhorias, correções de bugs ou novas funcionalidades, siga os passos:
