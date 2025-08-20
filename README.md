@@ -1,7 +1,5 @@
 #  Buffet CRM - Gestão Completa para Eventos
 
-![Logo](./public/logo.svg)
-
 **Buffet CRM** é um sistema web completo e robusto, desenhado para otimizar a gestão de buffets e empresas de eventos. A plataforma centraliza e automatiza todo o ciclo de vida de um evento, desde a captação do lead até a análise pós-evento, garantindo mais eficiência, lucratividade e satisfação para os clientes.
 
 ---
