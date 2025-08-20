@@ -113,19 +113,3 @@ Após a execução, a aplicação estará disponível em [http://localhost:3000]
 ---
 
 <img width="1917" height="865" alt="image" src="https://github.com/user-attachments/assets/2a7714c9-7d7b-41f4-9144-99b3ae2db694" />
-
-## 🤝 Contribuições
-
-Contribuições são muito bem-vindas! Se você tem ideias para melhorias, correções de bugs ou novas funcionalidades, siga os passos:
-
-1.  Faça um **Fork** deste repositório.
-2.  Crie uma nova **Branch** (`git checkout -b feature/sua-feature`).
-3.  Faça o **Commit** de suas alterações (`git commit -m 'Adiciona nova feature'`).
-4.  Envie para a sua Branch (`git push origin feature/sua-feature`).
-5.  Abra um **Pull Request**.
-
----
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
