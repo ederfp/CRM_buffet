@@ -1,115 +1,237 @@
-#  Buffet CRM - Gestão Completa para Eventos
+# Buffet CRM - Sistema de Gestão para Buffet In House
 
-**Buffet CRM** é um sistema web completo e robusto, desenhado para otimizar a gestão de buffets e empresas de eventos. A plataforma centraliza e automatiza todo o ciclo de vida de um evento, desde a captação do lead até a análise pós-evento, garantindo mais eficiência, lucratividade e satisfação para os clientes.
+Um sistema completo de CRM (Customer Relationship Management) desenvolvido especificamente para buffets que atendem eventos em domicílio e empresas.
 
----
+## 🚀 Funcionalidades
 
-## ✨ Principais Funcionalidades
+### MVP Implementado
 
-O sistema foi projetado para resolver os maiores desafios do setor, com um conjunto de funcionalidades que cobrem todas as áreas do seu negócio:
+#### 🏠 Dashboard
+- Visão geral com KPIs principais (taxa de conversão, ticket médio, leads novos, eventos)
+- Cards com métricas em tempo real
+- Lista de leads recentes com status
+- Próximos eventos com detalhes
+- Tarefas pendentes e alertas
+- Timeline de atividades recentes
 
-- **Gestão Comercial (CRM):**
-  - Pipeline de vendas no formato Kanban (Novo, Qualificado, Proposta, etc.).
-  - Cadastro detalhado de leads e clientes.
-  - Registro de interações (e-mails, chamadas, reuniões).
-  - Agendamento de tarefas e lembretes de follow-up.
+#### 👥 CRM Comercial
+- Cadastro e gerenciamento de leads
+- Pipeline de vendas com status (Novo, Qualificado, Proposta, Negociação, Ganho, Perdido)
+- Filtros por status e busca avançada
+- Modal para criação rápida de novos leads
+- Informações detalhadas de clientes e contatos
+- Integração com API REST para backend
 
-- **Orçamentos e Propostas Inteligentes:**
-  - Criação de catálogos de produtos, serviços e cardápios.
-  - Fichas técnicas com cálculo de custos, porções e margem de lucro em tempo real.
-  - Geração de propostas personalizadas com identidade visual.
-  - Aprovação online e assinatura eletrônica simplificada.
+#### 📅 Eventos & Agenda
+- Calendário de eventos com visualização por status
+- Gerenciamento de tipos de eventos (Corporativo, Casamento, Infantil, Coffee Break, etc.)
+- Detalhes de eventos (local, convidados, equipe, valor)
+- Sistema de alertas para conflitos de agenda
+- Visualização de equipe alocada
+- Status de produção e confirmação
 
-- **Gestão de Eventos e Agenda:**
-  - Calendário centralizado com visão de todos os eventos.
-  - Controle de conflitos de agenda para equipes e recursos.
-  - Alocação de staff (chefs, garçons, logística) por evento.
+#### 🍳 Produção
+- Ordens de Produção (OP) com numeração automática
+- Checklists de produção com progresso visual
+- Lista de compras consolidada por prioridade
+- Gestão de equipe por evento
+- Controle de status (Planejado, Em Produção, Concluído)
+- Alertas de estoque crítico e pedidos atrasados
 
-- **Planejamento e Produção:**
-  - Geração automática de Ordens de Produção (OP) a partir de propostas.
-  - Checklists de tarefas personalizáveis para garantir a execução perfeita.
-  - Lista de compras consolidada, otimizando o uso de insumos.
+#### 🛠️ Tecnologia
 
-- **Módulo Financeiro:**
-  - Geração automática de cobranças (PIX, boleto, etc.).
-  - Controle de contas a pagar e a receber.
-  - Visão clara da lucratividade e margem por evento.
+- **Frontend**: Next.js 15 com App Router
+- **Linguagem**: TypeScript 5
+- **Estilização**: Tailwind CSS 4
+- **Componentes UI**: shadcn/ui
+- **Banco de Dados**: SQLite com Prisma ORM
+- **Backend**: API REST com Next.js API Routes
+- **Estado**: React Hooks (estado local)
 
-- **Portal do Cliente:**
-  - Área exclusiva para o cliente acompanhar o status da proposta, aprovar, realizar pagamentos e comunicar-se com a equipe.
+#### 🗄️ Banco de Dados
 
----
+Schema completo com as seguintes entidades principais:
 
-## 🚀 Stack de Tecnologia
+- **Company**: Empresas do sistema
+- **User**: Usuários com roles (Admin, Manager, Sales, Operations, Finance, Viewer)
+- **Customer**: Clientes (Pessoa Física/Jurídica)
+- **Lead**: Leads do CRM com status e qualificação
+- **Opportunity**: Oportunidades de negócio
+- **Event**: Eventos com detalhes e status
+- **Proposal**: Propostas comerciais
+- **ProductionOrder**: Ordens de produção
+- **Item**: Itens do cardápio com fichas técnicas
+- **TeamMember**: Membros da equipe
+- **Resource**: Recursos (equipamentos, veículos)
 
-Este projeto foi construído com tecnologias modernas e escaláveis para garantir a melhor performance e experiência de usuário.
+## 🎯 Objetivos do Sistema
 
-- **Frontend:**
-  - [**Next.js**](https://nextjs.org/) - Framework React para produção.
-  - [**React**](https://react.dev/) - Biblioteca para construção de interfaces.
-  - [**TypeScript**](https://www.typescriptlang.org/) - JavaScript com tipagem estática.
-  - [**Tailwind CSS**](https://tailwindcss.com/) - Framework de estilização utility-first.
-  - [**Shadcn/UI**](https://ui.shadcn.com/) - Componentes de UI reusáveis e acessíveis.
-  - [**Zustand**](https://zustand-demo.pmnd.rs/) - Gerenciamento de estado.
+### KPIs Principais
+- **Taxa de conversão** de lead→contrato (%)
+- **Ticket médio** por evento (R$)
+- **Margem** por evento (%)
+- **Acurácia de custos** (orçado vs. real, %)
+- **Pontualidade de tarefas** (SLA, %)
+- **NPS** pós-evento
+- **Tempo médio de resposta** a leads (min)
 
-- **Backend:**
-  - [**Node.js**](https://nodejs.org/) - Ambiente de execução JavaScript.
-  - [**Express.js**](https://expressjs.com/) (via `server.ts`) - Framework para criação do servidor e APIs.
-  - [**Socket.IO**](https://socket.io/) - Para funcionalidades em tempo real.
+### Problemas Resolvidos
+- ✅ Perda de leads e follow-up inconsistente
+- ✅ Orçamentos sem padronização e baixa visibilidade de margem
+- ✅ Conflitos de agenda (data/hora/equipe/recursos)
+- ✅ Estouro de custos por falha no controle de insumos
+- ✅ Falta de visibilidade do status do evento
+- ✅ Cobranças manuais e inadimplência
 
-- **Banco de Dados & ORM:**
-  - [**Prisma**](https://www.prisma.io/) - ORM de próxima geração para Node.js e TypeScript.
-  - **SQLite** (padrão) / **PostgreSQL** (recomendado para produção).
+## 🚀 Como Começar
 
----
+### Pré-requisitos
+- Node.js 18+
+- npm ou yarn
 
-## ⚙️ Como Rodar o Projeto Localmente
-
-Siga os passos abaixo para configurar e executar o projeto em seu ambiente de desenvolvimento.
-
-**Pré-requisitos:**
-- [Node.js](https://nodejs.org/en/) (v20 ou superior)
-- [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
-
-**1. Clone o Repositório:**
+### Instalação
 ```bash
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
-cd SEU_REPOSITORIO
-```
+# Clonar o repositório
+git clone <repository-url>
+cd buffet-crm
 
-**2. Instale as Dependências:**
-```bash
+# Instalar dependências
 npm install
-```
 
-**3. Configure o Banco de Dados:**
-- Renomeie o arquivo `.env.example` para `.env.local`.
-- Configure a variável `DATABASE_URL` com a string de conexão do seu banco de dados. Para usar o SQLite padrão, o valor pode ser: `file:./dev.db`.
+# Configurar variáveis de ambiente
+cp .env.example .env
 
-**4. Aplique as Migrações do Banco de Dados:**
-Este comando irá criar o banco de dados (se não existir) e aplicar o schema definido.
-```bash
-npx prisma db push
-```
+# Rodar migrações do banco de dados
+npm run db:push
 
-**5. Execute o Servidor de Desenvolvimento:**
-O projeto utiliza `nodemon` para reiniciar o servidor automaticamente ao detectar alterações.
-```bash
+# Iniciar o servidor de desenvolvimento
 npm run dev
 ```
 
-Após a execução, a aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
+### Variáveis de Ambiente
+```env
+DATABASE_URL="file:./dev.db"
+```
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── api/               # API Routes
+│   │   ├── leads/         # Leads API
+│   │   └── customers/     # Customers API
+│   ├── crm/               # CRM Page
+│   ├── events/            # Events Page
+│   ├── production/        # Production Page
+│   ├── page.tsx           # Dashboard
+│   └── layout.tsx         # Root Layout
+├── components/
+│   ├── layout/            # Layout Components
+│   │   └── dashboard-layout.tsx
+│   ├── crm/              # CRM Components
+│   │   └── new-lead-modal.tsx
+│   ├── dashboard/        # Dashboard Components
+│   │   └── dashboard-content.tsx
+│   └── ui/               # shadcn/ui Components
+├── lib/
+│   ├── db.ts             # Prisma Client
+│   ├── utils.ts          # Utility Functions
+│   └── socket.ts         # Socket.io (para uso futuro)
+└── prisma/
+    └── schema.prisma     # Database Schema
+```
+
+## 🎨 UI/UX Design
+
+### Principais Características
+- **Design Responsivo**: Mobile-first para checklists e portal do cliente
+- **Navegação Intuitiva**: Menu lateral com acesso rápido a todos os módulos
+- **Status Visuais**: Badges coloridos para rápido reconhecimento de status
+- **Kanban no CRM**: Visualização por estágios do pipeline
+- **Calendário Integrado**: Para gestão de eventos e recursos
+- **Filtros Avançados**: Busca e filtragem em todas as listagens
+
+### Acessibilidade
+- Navegação por teclado
+- Contraste AA (WCAG)
+- Semântica HTML5 adequada
+- Labels e descrições para screen readers
+
+## 🔄 Fluxo de Trabalho
+
+### 1. Atração de Leads
+- Lead chega via formulário/site ou cadastro manual
+- Qualificação e agendamento de visita/degustação
+- Acompanhamento no pipeline de vendas
+
+### 2. Propostas e Contratos
+- Geração de proposta a partir do cardápio escolhido
+- Cálculo automático de custos e margem
+- Envio do link para aprovação online
+- Assinatura eletrônica com trilha de auditoria
+
+### 3. Planejamento de Eventos
+- Confirmação do evento com bloqueio de agenda
+- Alocação de equipe e recursos
+- Geração de Ordem de Produção
+- Lista de compras consolidada
+
+### 4. Execução e Produção
+- Checklists de produção com progresso
+- Controle de qualidade e ocorrências
+- Registro de não conformidades
+- Acompanhamento em tempo real
+
+### 5. Pós-evento
+- Apuração de custos reais vs. orçado
+- Geração de NPS e pesquisa de satisfação
+- Análise de margem final
+- Criação de oportunidades de upsell
+
+## 📈 Roadmap Futuro
+
+### Fase 1 - MVP (✅ Concluído)
+- [x] Dashboard com KPIs
+- [x] CRM Comercial básico
+- [x] Gestão de Eventos
+- [x] Produção e Checklists
+- [x] API REST básica
+
+### Fase 2 - Expansão
+- [ ] Portal do Cliente
+- [ ] Financeiro completo (DRE, contas a pagar/receber)
+- [ ] Estoque e compras avançado
+- [ ] Relatórios e dashboards analíticos
+
+### Fase 3 - Integrações
+- [ ] Gateway de pagamentos (PIX, Boleto, Cartão)
+- [ ] WhatsApp Business API
+- [ ] Assinatura eletrônica avançada
+- [ ] Integração com calendários (Google/Outlook)
+
+### Fase 4 - Otimizações
+- [ ] BI e analytics avançado
+- [ ] App móvel offline
+- [ ] Roteirização com GPS
+- [ ] Integrações fiscais (NF-e/NFS-e)
+
+## 🤝 Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
+3. Commit suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 🆘 Suporte
+
+Para suporte, envie um email para suporte@buffetcrm.com ou abra uma issue no GitHub.
 
 ---
 
-### Comandos Úteis do Projeto
-
-- `npm run build`: Compila a aplicação para produção.
-- `npm run start`: Inicia o servidor em modo de produção.
-- `npm run lint`: Executa o linter para análise de código.
-- `npx prisma generate`: Gera o cliente Prisma após alterações no `schema.prisma`.
-- `npx prisma migrate dev`: Cria uma nova migração de banco de dados.
-
----
-
-<img width="1917" height="865" alt="image" src="https://github.com/user-attachments/assets/2a7714c9-7d7b-41f4-9144-99b3ae2db694" />
+**Desenvolvido com ❤️ para o mercado de buffets brasileiros**
